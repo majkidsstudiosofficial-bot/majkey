@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features & Interactive 360° Onikuma G67 | MAJ KEY</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkbg: '#050508',
+                        cardbg: '#0f0f13',
+                        neoncyan: '#00f2fe',
+                        neonpurple: '#7928ca',
+                        neonpink: '#ff007f'
+                    },
+                    fontFamily: {
+                        orbitron: ['Orbitron', 'sans-serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-panel {
+            background: rgba(15, 15, 19, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 242, 254, 0.2);
+        }
+        .glow-cyan {
+            box-shadow: 0 0 30px rgba(0, 242, 254, 0.3);
+        }
+        .glow-cyan-hover:hover {
+            box-shadow: 0 0 50px rgba(0, 242, 254, 0.6);
+        }
+        
+        /* 360 Degree Interactive Keyboard Container Styling (No Frame) */
+        #keyboard360Container {
+            perspective: 1400px;
+            cursor: grab;
+            user-select: none;
+        }
+        #keyboard360Container:active {
+            cursor: grabbing;
+        }
+        .keyboard-3d-model {
+            transform-style: preserve-3d;
+            transition: transform 0.1s ease-out;
+        }
+
+        /* Dynamic RGB Lighting Color Cycling for Keys (Red, Blue, Yellow, Pink, Green) */
+        @keyframes customRgbGlow {
+            0% { 
+                filter: drop-shadow(0 0 45px rgba(255, 0, 0, 0.95)) brightness(1.3); 
+            }
+            20% { 
+                filter: drop-shadow(0 0 45px rgba(0, 140, 255, 0.95)) brightness(1.3); 
+            }
+            40% { 
+                filter: drop-shadow(0 0 45px rgba(255, 220, 0, 0.95)) brightness(1.3); 
+            }
+            60% { 
+                filter: drop-shadow(0 0 45px rgba(255, 0, 127, 0.95)) brightness(1.3); 
+            }
+            80% { 
+                filter: drop-shadow(0 0 45px rgba(0, 255, 90, 0.95)) brightness(1.3); 
+            }
+            100% { 
+                filter: drop-shadow(0 0 45px rgba(255, 0, 0, 0.95)) brightness(1.3); 
+            }
+        }
+        .animate-custom-rgb {
+            animation: customRgbGlow 6s infinite linear;
+        }
+
+        @keyframes rgbBorder {
+            0% { border-color: #00f2fe; }
+            33% { border-color: #7928ca; }
+            66% { border-color: #ff007f; }
+            100% { border-color: #00f2fe; }
+        }
+        .animate-rgb-border {
+            animation: rgbBorder 6s infinite linear;
+        }
+    </style>
+</head>
+<body class="bg-darkbg text-gray-100 font-sans selection:bg-neoncyan selection:text-black">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-neonpurple via-neoncyan to-neonpink text-black text-xs font-bold py-2 text-center tracking-widest uppercase">
+        ⚡ Flash Sale: Get 50% OFF on All Custom Mechanical Keyboards Today! Use Code: MAJ50 ⚡
+    </div>
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 glass-panel border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-neoncyan to-neonpurple flex items-center justify-center glow-cyan">
+                    <i class="fa-solid fa-keyboard text-black text-lg"></i>
+                </div>
+                <span class="font-orbitron text-2xl font-black tracking-widest text-white">MAJ <span class="text-transparent bg-clip-text bg-gradient-to-r from-neoncyan to-neonpink">KEY</span></span>
+            </div>
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wider">
+                <a href="index.html" class="hover:text-neoncyan transition-colors">HOME</a>
+                <a href="keyboards.html" class="hover:text-neoncyan transition-colors">KEYBOARDS</a>
+                <a href="features.html" class="text-neoncyan font-bold transition-colors">FEATURES</a>
+                <a href="reviews.html" class="hover:text-neoncyan transition-colors">REVIEWS</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <div class="relative cursor-pointer">
+                    <i class="fa-solid fa-cart-shopping text-xl hover:text-neoncyan transition-colors"></i>
+                    <span class="absolute -top-2 -right-2 bg-neonpink text-white font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center">1</span>
+                </div>
+                <a href="keyboards.html" class="hidden sm:inline-block bg-gradient-to-r from-neoncyan to-neonpurple text-black font-bold px-6 py-2.5 rounded-full text-sm tracking-wider glow-cyan glow-cyan-hover transition-all">
+                    SHOP NOW
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Background Video Section -->
+    <section class="py-16 overflow-hidden flex flex-col items-center justify-center border-b border-white/10">
+        <div class="absolute inset-0 z-0 overflow-hidden bg-black">
+            <video id="bgVideo" autoplay muted loop playsinline preload="auto" class="w-full h-full object-cover filter brightness-75 scale-105">
+                <source src="keyboard.mp4" type="video/mp4">
+            </video>
+            <div class="absolute inset-0 bg-gradient-to-b from-darkbg/90 via-darkbg/70 to-darkbg/95"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-4 relative z-10 text-center space-y-4 mb-6">
+            <span class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full glass-panel text-neoncyan text-xs font-semibold tracking-widest uppercase animate-rgb-border border">
+                <i class="fa-solid fa-cube text-neoncyan"></i> <span>Interactive 360° Magnetic Switch Showcase</span>
+            </span>
+            <h1 class="font-orbitron text-3xl sm:text-5xl font-black text-white tracking-tight">
+                ONIKUMA G67 <span class="text-transparent bg-clip-text bg-gradient-to-r from-neoncyan via-neonpurple to-neonpink">MAGNETIC</span>
+            </h1>
+            <p class="text-gray-300 text-sm sm:text-base max-w-xl mx-auto">
+                Drag with your mouse or finger to rotate this large topographic keyboard 360 degrees. Watch the keys light up dynamically across Red, Blue, Yellow, Pink, and Green!
+            </p>
+        </div>
+
+        <!-- 360 Degree Interactive Large-Sized Onikuma G67 Showcase (Frameless) -->
+        <div id="keyboard360Container" class="relative z-10 w-full max-w-7xl mx-auto px-4 h-[460px] sm:h-[600px] flex items-center justify-center">
+            <div id="keyboardModel" class="keyboard-3d-model w-full max-w-6xl text-center relative select-none">
+                
+                <!-- Interactive Drag Indicator Badge -->
+                <div class="absolute -top-4 right-8 bg-black/80 text-neoncyan text-xs font-semibold px-4 py-2 rounded-full border border-neoncyan/40 flex items-center space-x-2 z-20 pointer-events-none glow-cyan">
+                    <i class="fa-solid fa-arrows-spin animate-spin"></i>
+                    <span>Drag to Rotate 360°</span>
+                </div>
+
+                <!-- Large Realistic Keyboard Image with Dynamic RGB Glow -->
+                <div class="relative w-full h-96 sm:h-[480px] overflow-hidden flex items-center justify-center p-2">
+                    <img src="https://pcbstore.com.bd/img/w640/q75/storage/products/onikuma-g67-hall-effect-magnetic-switch-gaming-keyboard.webp" alt="Onikuma G67 Magnetic Switch Gaming Keyboard" class="w-full h-full object-contain scale-110 sm:scale-125 animate-custom-rgb transition-all duration-300 pointer-events-none">
+                </div>
+
+                <!-- Model Title Tag & Price -->
+                <div class="mt-4 max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between px-8 py-4 glass-panel rounded-2xl border border-white/10">
+                    <div class="text-left">
+                        <h3 class="font-orbitron text-lg sm:text-xl font-bold text-white">Onikuma G67 Hall Effect Magnetic Edition</h3>
+                        <p class="text-xs text-neoncyan tracking-widest uppercase">Topographic Keycaps • Dynamic Multi-Color RGB</p>
+                    </div>
+                    <span class="mt-2 sm:mt-0 font-orbitron font-black text-2xl text-neoncyan">$135.00</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Features & Detailed Specifications Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <h2 class="font-orbitron text-3xl sm:text-4xl font-black text-white">Engineering & Special Highlights</h2>
+            <p class="text-gray-400">Discover what makes the Onikuma G67 Magnetic Switch keyboard a masterpiece for speed and precision.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <!-- Feature Card 1 -->
+            <div class="glass-panel p-8 rounded-3xl space-y-4 hover:border-neoncyan transition-all duration-300 group">
+                <div class="w-14 h-14 rounded-2xl bg-neoncyan/10 text-neoncyan flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-magnet"></i>
+                </div>
+                <h3 class="font-orbitron text-xl font-bold text-white">Hall Effect Magnetic Switches</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Advanced magnetic sensors deliver lightning-fast response times with adjustable actuation points for absolute competitive advantage.
+                </p>
+            </div>
+
+            <!-- Feature Card 2 -->
+            <div class="glass-panel p-8 rounded-3xl space-y-4 hover:border-neoncyan transition-all duration-300 group">
+                <div class="w-14 h-14 rounded-2xl bg-neonpurple/10 text-neonpurple flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-mountain"></i>
+                </div>
+                <h3 class="font-orbitron text-xl font-bold text-white">Topographic Keycaps</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Custom contoured keycaps featuring unique topographic aesthetic lines designed for supreme grip and striking visual texture.
+                </p>
+            </div>
+
+            <!-- Feature Card 3 -->
+            <div class="glass-panel p-8 rounded-3xl space-y-4 hover:border-neoncyan transition-all duration-300 group">
+                <div class="w-14 h-14 rounded-2xl bg-neonpink/10 text-neonpink flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-bolt"></i>
+                </div>
+                <h3 class="font-orbitron text-xl font-bold text-white">Rapid Trigger Technology</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Keys reset instantly the moment you lift your finger, allowing for unprecedented repetition speed in intense gaming sessions.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-white/10 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 rounded-lg bg-neoncyan flex items-center justify-center">
+                    <i class="fa-solid fa-keyboard text-black"></i>
+                </div>
+                <span class="font-orbitron text-xl font-bold tracking-widest text-white">MAJ KEY</span>
+            </div>
+            <div class="flex space-x-6 text-sm text-gray-400">
+                <a href="index.html" class="hover:text-neoncyan">Home</a>
+                <a href="keyboards.html" class="hover:text-neoncyan">Keyboards</a>
+                <a href="features.html" class="hover:text-neoncyan">Features</a>
+            </div>
+            <div class="flex space-x-4 text-neoncyan">
+                <a href="#" class="w-10 h-10 rounded-full glass-panel flex items-center justify-center hover:bg-neoncyan hover:text-black transition-all"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full glass-panel flex items-center justify-center hover:bg-neoncyan hover:text-black transition-all"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full glass-panel flex items-center justify-center hover:bg-neoncyan hover:text-black transition-all"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
+        <div class="text-center text-xs text-gray-600 mt-8">
+            &copy; 2026 MAJ KEY Bangladesh. All Rights Reserved.
+        </div>
+    </footer>
+
+    <!-- JavaScript for Background Video & 360 Degree Mouse/Touch Rotation -->
+    <script>
+        // Background video auto-play handler
+        document.addEventListener("DOMContentLoaded", function() {
+            const video = document.getElementById("bgVideo");
+            if (video) {
+                video.play().catch(error => {
+                    console.log("Auto-play was prevented:", error);
+                });
+            }
+        });
+
+        // 360 Degree Drag / Touch Rotation Engine for Keyboard Model
+        const container = document.getElementById('keyboard360Container');
+        const model = document.getElementById('keyboardModel');
+
+        let isDragging = false;
+        let startX = 0;
+        let currentRotationY = 0;
+
+        container.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            startX = e.clientX;
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            const deltaX = e.clientX - startX;
+            currentRotationY = deltaX * 0.4; // Rotation sensitivity
+            model.style.transform = `rotateY(${currentRotationY}deg) rotateX(${-currentRotationY * 0.05}deg)`;
+        });
+
+        window.addEventListener('mouseup', () => {
+            if (isDragging) {
+                isDragging = false;
+                model.style.transform = `rotateY(0deg) rotateX(0deg)`;
+                model.style.transition = 'transform 0.5s ease';
+                setTimeout(() => { model.style.transition = 'none'; }, 500);
+            }
+        });
+
+        // Touch support for mobile phones and tablets
+        container.addEventListener('touchstart', (e) => {
+            isDragging = true;
+            startX = e.touches[0].clientX;
+        });
+
+        window.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            const deltaX = e.touches[0].clientX - startX;
+            currentRotationY = deltaX * 0.4;
+            model.style.transform = `rotateY(${currentRotationY}deg)`;
+        });
+
+        window.addEventListener('touchend', () => {
+            if (isDragging) {
+                isDragging = false;
+                model.style.transform = `rotateY(0deg)`;
+                model.style.transition = 'transform 0.5s ease';
+                setTimeout(() => { model.style.transition = 'none'; }, 500);
+            }
+        });
+    </script>
+
+</body>
+</html>

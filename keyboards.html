@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Keyboards | MAJ KEY Elite Collection</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkbg: '#050508',
+                        cardbg: '#0f0f13',
+                        neoncyan: '#00f2fe',
+                        neonpurple: '#7928ca',
+                        neonpink: '#ff007f'
+                    },
+                    fontFamily: {
+                        orbitron: ['Orbitron', 'sans-serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-panel {
+            background: rgba(15, 15, 19, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 242, 254, 0.2);
+        }
+        .glow-cyan {
+            box-shadow: 0 0 30px rgba(0, 242, 254, 0.3);
+        }
+        .glow-cyan-hover:hover {
+            box-shadow: 0 0 50px rgba(0, 242, 254, 0.6);
+        }
+        /* 3D Card Tilt Effect Styling */
+        .card-3d {
+            transition: transform 0.4s cubic-bezier(0.03, 0.98, 0.52, 0.99), box-shadow 0.4s ease;
+            transform-style: preserve-perspective;
+        }
+        .card-3d:hover {
+            transform: translateY(-10px) rotateX(4deg) rotateY(-4deg);
+            box-shadow: 0 20px 40px rgba(0, 242, 254, 0.25);
+            border-color: rgba(0, 242, 254, 0.6);
+        }
+        @keyframes rgbBorder {
+            0% { border-color: #00f2fe; }
+            33% { border-color: #7928ca; }
+            66% { border-color: #ff007f; }
+            100% { border-color: #00f2fe; }
+        }
+        .animate-rgb-border {
+            animation: rgbBorder 6s infinite linear;
+        }
+    </style>
+</head>
+<body class="bg-darkbg text-gray-100 font-sans selection:bg-neoncyan selection:text-black">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-neonpurple via-neoncyan to-neonpink text-black text-xs font-bold py-2 text-center tracking-widest uppercase">
+        ⚡ Flash Sale: Get 50% OFF on All Custom Mechanical Keyboards Today! Use Code: MAJ50 ⚡
+    </div>
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 glass-panel border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-neoncyan to-neonpurple flex items-center justify-center glow-cyan">
+                    <i class="fa-solid fa-keyboard text-black text-lg"></i>
+                </div>
+                <span class="font-orbitron text-2xl font-black tracking-widest text-white">MAJ <span class="text-transparent bg-clip-text bg-gradient-to-r from-neoncyan to-neonpink">KEY</span></span>
+            </div>
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wider">
+                <a href="index.html" class="hover:text-neoncyan transition-colors">HOME</a>
+                <a href="keyboards.html" class="text-neoncyan font-bold transition-colors">KEYBOARDS</a>
+                <a href="features.html" class="hover:text-neoncyan transition-colors">FEATURES</a>
+                <a href="reviews.html" class="hover:text-neoncyan transition-colors">REVIEWS</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <div class="relative cursor-pointer">
+                    <i class="fa-solid fa-cart-shopping text-xl hover:text-neoncyan transition-colors"></i>
+                    <span id="cartCount" class="absolute -top-2 -right-2 bg-neonpink text-white font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center">1</span>
+                </div>
+                <a href="#keyboardsList" class="hidden sm:inline-block bg-gradient-to-r from-neoncyan to-neonpurple text-black font-bold px-6 py-2.5 rounded-full text-sm tracking-wider glow-cyan glow-cyan-hover transition-all">
+                    EXPLORE
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sub-Hero Banner with Background Video -->
+    <section class="relative py-20 overflow-hidden flex items-center justify-center border-b border-white/10">
+        <div class="absolute inset-0 z-0 overflow-hidden bg-black">
+            <video id="bgVideo" autoplay muted loop playsinline preload="auto" class="w-full h-full object-cover filter brightness-75 scale-105">
+                <source src="keyboard.mp4" type="video/mp4">
+            </video>
+            <div class="absolute inset-0 bg-gradient-to-b from-darkbg/90 via-darkbg/70 to-darkbg/95"></div>
+        </div>
+        <div class="max-w-4xl mx-auto px-4 relative z-10 text-center space-y-4">
+            <span class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full glass-panel text-neoncyan text-xs font-semibold tracking-widest uppercase animate-rgb-border border">
+                <i class="fa-solid fa-fire text-neoncyan"></i> <span>Elite Armoury Collection</span>
+            </span>
+            <h1 class="font-orbitron text-3xl sm:text-5xl font-black text-white tracking-tight">
+                EXPLORE ALL <span class="text-transparent bg-clip-text bg-gradient-to-r from-neoncyan via-neonpurple to-neonpink">KEYBOARDS</span>
+            </h1>
+            <p class="text-gray-300 text-sm sm:text-base max-w-xl mx-auto">
+                Discover our hand-crafted, custom-lubricated mechanical keyboards designed for supreme acoustics and lighting.
+            </p>
+        </div>
+    </section>
+
+    <!-- Keyboards Catalog Section -->
+    <section id="keyboardsList" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Item 1 -->
+            <div class="glass-panel rounded-3xl overflow-hidden card-3d group cursor-pointer border border-white/10" onclick="openQuickView('Maj Key 65% Compact', '$129.00', 'Wireless Tri-Mode, RGB Backlit, Gateron Yellow Switches, PBT Keycaps.', 'https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?auto=format&fit=crop&w=600&q=80')">
+                <div class="relative h-64 overflow-hidden bg-black/50">
+                    <img src="https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?auto=format&fit=crop&w=600&q=80" alt="Maj Key 65%" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <span class="absolute top-4 left-4 bg-neoncyan text-black text-xs font-bold px-3 py-1 rounded-full shadow-lg">BEST SELLER</span>
+                </div>
+                <div class="p-6 space-y-4">
+                    <div class="flex justify-between items-start">
+                        <h3 class="font-orbitron text-xl font-bold text-white group-hover:text-neoncyan transition-colors">Maj Key 65% Compact</h3>
+                        <span class="text-neoncyan font-orbitron font-black text-xl">$129.00</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">Wireless Tri-Mode, RGB Backlit, Gateron Yellow Switches.</p>
+                    <div class="pt-2 flex items-center justify-between">
+                        <span class="text-xs text-gray-400 flex items-center"><i class="fa-solid fa-circle-check text-neoncyan mr-1.5"></i> In Stock</span>
+                        <button onclick="event.stopPropagation(); openCheckout('Maj Key 65% Compact', '$129.00', 'https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?auto=format&fit=crop&w=600&q=80')" class="bg-gradient-to-r from-neoncyan to-neonpurple text-black font-bold px-5 py-2.5 rounded-xl text-sm glow-cyan glow-cyan-hover transition-all">
+                            Buy Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="glass-panel rounded-3xl overflow-hidden card-3d group cursor-pointer border border-white/10" onclick="openQuickView('Maj Key TKL Esports', '$159.00', 'Aluminum CNC Frame, Hot-Swappable PCB, Linear Red Switches, Sound Foam.', 'https://images.unsplash.com/photo-1595225476474-87563907a212?auto=format&fit=crop&w=600&q=80')">
+                <div class="relative h-64 overflow-hidden bg-black/50">
+                    <img src="https://images.unsplash.com/photo-1595225476474-87563907a212?auto=format&fit=crop&w=600&q=80" alt="Maj Key TKL" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <span class="absolute top-4 left-4 bg-neonpurple text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">PRO GAMING</span>
+                </div>
+                <div class="p-6 space-y-4">
+                    <div class="flex justify-between items-start">
+                        <h3 class="font-orbitron text-xl font-bold text-white group-hover:text-neoncyan transition-colors">Maj Key TKL Esports</h3>
+                        <span class="text-neoncyan font-orbitron font-black text-xl">$159.00</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">Aluminum Frame, Hot-Swappable PCB, Linear Red Switches.</p>
+                    <div class="pt-2 flex items-center justify-between">
+                        <span class="text-xs text-gray-400 flex items-center"><i class="fa-solid fa-circle-check text-neoncyan mr-1.5"></i> In Stock</span>
+                        <button onclick="event.stopPropagation(); openCheckout('Maj Key TKL Esports', '$159.00', 'https://images.unsplash.com/photo-1595225476474-87563907a212?auto=format&fit=crop&w=600&q=80')" class="bg-gradient-to-r from-neoncyan to-neonpurple text-black font-bold px-5 py-2.5 rounded-xl text-sm glow-cyan glow-cyan-hover transition-all">
+                            Buy Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="glass-panel rounded-3xl overflow-hidden card-3d group cursor-pointer border border-white/10" onclick="openQuickView('Maj Key Full-Size Ultra', '$189.00', 'Dedicated Media Keys, Sound-Absorbing Silicone Foam, Tactile Brown Switches.', 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=600&q=80')">
+                <div class="relative h-64 overflow-hidden bg-black/50">
+                    <img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=600&q=80" alt="Maj Key Full" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <span class="absolute top-4 left-4 bg-neonpink text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">LIMITED EDITION</span>
+                </div>
+                <div class="p-6 space-y-4">
+                    <div class="flex justify-between items-start">
+                        <h3 class="font-orbitron text-xl font-bold text-white group-hover:text-neoncyan transition-colors">Maj Key Full-Size Ultra</h3>
+                        <span class="text-neoncyan font-orbitron font-black text-xl">$189.00</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">Dedicated Media Keys, Sound-Absorbing Foam, Tactile Brown.</p>
+                    <div class="pt-2 flex items-center justify-between">
+                        <span class="text-xs text-gray-400 flex items-center"><i class="fa-solid fa-circle-check text-neoncyan mr-1.5"></i> In Stock</span>
+                        <button onclick="event.stopPropagation(); openCheckout('Maj Key Full-Size Ultra', '$189.00', 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=600&q=80')" class="bg-gradient-to-r from-neoncyan to-neonpurple text-black font-bold px-5 py-2.5 rounded-xl text-sm glow-cyan glow-cyan-hover transition-all">
+                            Buy Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="glass-panel rounded-3xl overflow-hidden card-3d group cursor-pointer border border-white/10" onclick="openQuickView('Maj Key Cyberpunk 75%', '$145.00', 'Transparent Acrylic Case, Custom RGB Matrix, Cyberpunk Themed Keycaps.', 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=600&q=80')">
+                <div class="relative h-64 overflow-hidden bg-black/50">
+                    <img src="https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?auto=format&fit=crop&w=600&q=80" alt="Cyberpunk 75" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <span class="absolute top-4 left-4 bg-neoncyan text-black text-xs font-bold px-3 py-1 rounded-full shadow-lg">CYBER SERIES</span>
+                </div>
+                <div class="p-6 space-y-4">
+                    <div class="flex justify-between items-start">
+                        <h3 class="font-orbitron text-xl font-bold text-white group-hover:text-neoncyan transition-colors">Maj Key Cyberpunk 75%</h3>
+                        <span class="text-neoncyan font-orbitron font-black text-xl">$145.00</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">Transparent Acrylic Case, Custom RGB Matrix, Hot-swap.</p>
+                    <div class="pt-2 flex items-center justify-between">
+                        <span class="text-xs text-gray-400 flex items-center"><i class="fa-solid fa-circle-check text-neoncyan mr-1.5"></i> In Stock</span>
+                        <button onclick="event.stopPropagation(); openCheckout('Maj Key Cyberpunk 75%', '$145.00', 'https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?auto=format&fit=crop&w=600&q=80')" class="bg-gradient-to-r from-neoncyan to-neonpurple text-black font-bold px-5 py-2.5 rounded-xl text-sm glow-cyan glow-cyan-hover transition-all">
+                            Buy Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="glass-panel rounded-3xl overflow-hidden card-3d group cursor-pointer border border-white/10" onclick="openQuickView('Maj Key Stealth 40%', '$110.00', 'Ultra Minimalist, Programmable Layers, Brass Weight Plate.', 'https://images.unsplash.com/photo-1595225476474-87563907a212?auto=format&fit=crop&w=600&q=80')">
+                <div class="relative h-64 overflow-hidden bg-black/50">
+                    <img src="https://images.unsplash.com/photo-1595225476474-87563907a212?auto=format&fit=crop&w=600&q=80" alt="Stealth 40" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <span class="absolute top-4 left-4 bg-neonpurple text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">MINIMALIST</span>
+                </div>
+                <div class="p-6 space-y-4">
+                    <div class="flex justify-between items-start">
+                        <h3 class="font-orbitron text-xl font-bold text-white group-hover:text-neoncyan transition-colors">Maj Key Stealth 40%</h3>
+                        <span class="text-neoncyan font-orbitron font-black text-xl">$110.00</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">Ultra Minimalist, Programmable Layers, Brass Weight.</p>
+                    <div class="pt-2 flex items-center justify-between">
+                        <span class="text-xs text-gray-400 flex items-center"><i class="fa-solid fa-circle-check text-neoncyan mr-1.5"></i> In Stock</span>
+                        <button onclick="event.stopPropagation(); openCheckout('Maj Key Stealth 40%', '$110.00', 'https://images.unsplash.com/photo-1595225476474-87563907a212?auto=format&fit=crop&w=600&q=80')" class="bg-gradient-to-r from-neoncyan to-neonpurple text-black font-bold px-5 py-2.5 rounded-xl text-sm glow-cyan glow-cyan-hover transition-all">
+                            Buy Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 6 -->
+            <div class="glass-panel rounded-3xl overflow-hidden card-3d group cursor-pointer border border-white/10" onclick="openQuickView('Maj Key Titan Pro Heavy', '$210.00', 'Solid Brass Plate, Heavyweight Aluminum Body, Ultimate Thock Acoustics.', 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=600&q=80')">
+                <div class="relative h-64 overflow-hidden bg-black/50">
+                    <img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=600&q=80" alt="Titan Pro" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <span class="absolute top-4 left-4 bg-neonpink text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">FLAGSHIP</span>
+                </div>
+                <div class="p-6 space-y-4">
+                    <div class="flex justify-between items-start">
+                        <h3 class="font-orbitron text-xl font-bold text-white group-hover:text-neoncyan transition-colors">Maj Key Titan Pro Heavy</h3>
+                        <span class="text-neoncyan font-orbitron font-black text-xl">$210.00</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">Solid Brass Plate, Heavyweight Aluminum Body, Ultimate Thock.</p>
+                    <div class="pt-2 flex items-center justify-between">
+                        <span class="text-xs text-gray-400 flex items-center"><i class="fa-solid fa-circle-check text-neoncyan mr-1.5"></i> In Stock</span>
+                        <button onclick="event.stopPropagation(); openCheckout('Maj Key Titan Pro Heavy', '$210.00', 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=600&q=80')" class="bg-gradient-to-r from-neoncyan to-neonpurple text-black font-bold px-5 py-2.5 rounded-xl text-sm glow-cyan glow-cyan-hover transition-all">
+                            Buy Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-white/10 py-12 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 rounded-lg bg-neoncyan flex items-center justify-center">
+                    <i class="fa-solid fa-keyboard text-black"></i>
+                </div>
+                <span class="font-orbitron text-xl font-bold tracking-widest text-white">MAJ KEY</span>
+            </div>
+            <div class="flex space-x-6 text-sm text-gray-400">
+                <a href="index.html" class="hover:text-neoncyan">Home</a>
+                <a href="keyboards.html" class="hover:text-neoncyan">Keyboards</a>
+                <a href="index.html#features" class="hover:text-neoncyan">Features</a>
+            </div>
+            <div class="flex space-x-4 text-neoncyan">
+                <a href="#" class="w-10 h-10 rounded-full glass-panel flex items-center justify-center hover:bg-neoncyan hover:text-black transition-all"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full glass-panel flex items-center justify-center hover:bg-neoncyan hover:text-black transition-all"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full glass-panel flex items-center justify-center hover:bg-neoncyan hover:text-black transition-all"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
+        <div class="text-center text-xs text-gray-600 mt-8">
+            &copy; 2026 MAJ KEY Bangladesh. All Rights Reserved.
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE 3D QUICK VIEW MODAL -->
+    <div id="quickViewModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300 px-4">
+        <div class="glass-panel w-full max-w-xl rounded-3xl p-6 sm:p-8 relative transform scale-95 transition-transform duration-300 border border-neoncyan/40 shadow-2xl glow-cyan space-y-6">
+            
+            <!-- Close Button -->
+            <button onclick="closeQuickView()" class="absolute top-5 right-5 w-10 h-10 rounded-full bg-cardbg text-gray-400 hover:text-neoncyan hover:bg-white/10 flex items-center justify-center transition-all cursor-pointer">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <!-- Modal Image Preview -->
+            <div class="relative h-56 rounded-2xl overflow-hidden bg-black/50 border border-white/10">
+                <img id="modalImg" src="" alt="Keyboard Preview" class="w-full h-full object-cover">
+                <span class="absolute bottom-3 left-3 bg-neoncyan/20 border border-neoncyan text-neoncyan text-xs font-bold px-3 py-1 rounded-full backdrop-blur-md">
+                    <i class="fa-solid fa-bolt mr-1"></i> Special Edition
+                </span>
+            </div>
+
+            <!-- Modal Details -->
+            <div class="space-y-2">
+                <h3 id="modalTitle" class="font-orbitron text-2xl font-black text-white">Keyboard Name</h3>
+                <p id="modalPrice" class="text-neoncyan font-orbitron font-black text-2xl">$0.00</p>
+                <p id="modalDesc" class="text-gray-300 text-sm leading-relaxed pt-2">Description goes here...</p>
+            </div>
+
+            <!-- Modal Actions -->
+            <div class="flex items-center space-x-4 pt-4 border-t border-white/10">
+                <button onclick="addToCartModal()" class="flex-1 bg-gradient-to-r from-neoncyan to-neonpurple text-black font-bold py-3.5 rounded-xl text-sm glow-cyan glow-cyan-hover transition-all cursor-pointer">
+                    <i class="fa-solid fa-cart-shopping mr-2"></i> Add to Cart
+                </button>
+                <button onclick="closeQuickView()" class="glass-panel text-white font-medium px-6 py-3.5 rounded-xl text-sm hover:border-neoncyan transition-all cursor-pointer">
+                    Close
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 🛒 E-COMMERCE CHECKOUT / BUY NOW POPUP MODAL -->
+    <div id="checkoutModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300 px-4">
+        <div class="glass-panel w-full max-w-lg rounded-3xl p-6 sm:p-8 relative transform scale-95 transition-transform duration-300 border border-neoncyan/40 shadow-2xl glow-cyan space-y-5">
+            
+            <!-- Close Button -->
+            <button onclick="closeCheckout()" class="absolute top-5 right-5 w-10 h-10 rounded-full bg-cardbg text-gray-400 hover:text-neoncyan hover:bg-white/10 flex items-center justify-center transition-all cursor-pointer">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <!-- Modal Header -->
+            <div class="text-center space-y-1">
+                <span class="text-neoncyan text-xs font-bold tracking-widest uppercase bg-neoncyan/10 px-3 py-1 rounded-full border border-neoncyan/30">
+                    <i class="fa-solid fa-bag-shopping mr-1"></i> Express Checkout
+                </span>
+                <h3 class="font-orbitron text-2xl font-black text-white">Complete Your Order</h3>
+            </div>
+
+            <!-- Selected Product Summary Card -->
+            <div class="flex items-center space-x-4 bg-cardbg/80 p-3.5 rounded-2xl border border-white/10">
+                <img id="checkoutImg" src="" alt="Product" class="w-16 h-16 rounded-xl object-cover border border-white/10 shrink-0">
+                <div>
+                    <h4 id="checkoutTitle" class="font-orbitron font-bold text-white text-sm">Keyboard Name</h4>
+                    <p id="checkoutPrice" class="text-neoncyan font-orbitron font-black text-base">$0.00</p>
+                </div>
+            </div>
+
+            <!-- Checkout Form -->
+            <form onsubmit="submitOrder(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-medium text-gray-300 mb-1">Full Name Sir</label>
+                    <input type="text" required placeholder="Enter your full name" class="w-full bg-black/60 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-neoncyan transition-colors">
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-medium text-gray-300 mb-1">Phone Number</label>
+                        <input type="tel" required placeholder="017xxxxxxxx" class="w-full bg-black/60 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-neoncyan transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-medium text-gray-300 mb-1">City / Region</label>
+                        <input type="text" required placeholder="e.g. Dhaka" class="w-full bg-black/60 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-neoncyan transition-colors">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-medium text-gray-300 mb-1">Delivery Address</label>
+                    <textarea rows="2" required placeholder="House/Road/Area details..." class="w-full bg-black/60 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-neoncyan transition-colors resize-none"></textarea>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-medium text-gray-300 mb-1">Payment Method</label>
+                    <select class="w-full bg-black/60 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-neoncyan transition-colors">
+                        <option class="bg-cardbg">Cash on Delivery (COD)</option>
+                        <option class="bg-cardbg">bKash / Nagad Online Payment</option>
+                        <option class="bg-cardbg">Credit / Debit Card</option>
+                    </select>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="w-full bg-gradient-to-r from-neoncyan to-neonpurple text-black font-bold py-3.5 rounded-xl text-sm glow-cyan glow-cyan-hover transition-all cursor-pointer">
+                    <i class="fa-solid fa-check-circle mr-2"></i> Confirm Order Now
+                </button>
+            </form>
+
+        </div>
+    </div>
+
+    <!-- JavaScript for Interactions & Modals -->
+    <script>
+        // Background video auto-play handler
+        document.addEventListener("DOMContentLoaded", function() {
+            const video = document.getElementById("bgVideo");
+            if (video) {
+                video.play().catch(error => {
+                    console.log("Auto-play was prevented:", error);
+                });
+            }
+        });
+
+        // Quick View Modal Functions
+        const modal = document.getElementById('quickViewModal');
+        const modalImg = document.getElementById('modalImg');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalPrice = document.getElementById('modalPrice');
+        const modalDesc = document.getElementById('modalDesc');
+
+        function openQuickView(name, price, desc, imgSrc) {
+            modalImg.src = imgSrc;
+            modalTitle.innerText = name;
+            modalPrice.innerText = price;
+            modalDesc.innerText = desc;
+
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.querySelector('div > div').classList.remove('scale-95');
+            modal.querySelector('div > div').classList.add('scale-100');
+        }
+
+        function closeQuickView() {
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            modal.querySelector('div > div').classList.remove('scale-100');
+            modal.querySelector('div > div').classList.add('scale-95');
+        }
+
+        function addToCartModal() {
+            alert('🛒 Item successfully added to your cart, Sir!');
+            closeQuickView();
+        }
+
+        // 🛒 Checkout Modal Functions
+        const checkoutModal = document.getElementById('checkoutModal');
+        const checkoutImg = document.getElementById('checkoutImg');
+        const checkoutTitle = document.getElementById('checkoutTitle');
+        const checkoutPrice = document.getElementById('checkoutPrice');
+
+        function openCheckout(name, price, imgSrc) {
+            checkoutImg.src = imgSrc;
+            checkoutTitle.innerText = name;
+            checkoutPrice.innerText = price;
+
+            checkoutModal.classList.remove('opacity-0', 'pointer-events-none');
+            checkoutModal.querySelector('div > div').classList.remove('scale-95');
+            checkoutModal.querySelector('div > div').classList.add('scale-100');
+        }
+
+        function closeCheckout() {
+            checkoutModal.classList.add('opacity-0', 'pointer-events-none');
+            checkoutModal.querySelector('div > div').classList.remove('scale-100');
+            checkoutModal.querySelector('div > div').classList.add('scale-95');
+        }
+
+        function submitOrder(event) {
+            event.preventDefault();
+            alert('🎉 Congratulations Sir! Your order has been successfully placed. We will contact you soon! 🚀');
+            closeCheckout();
+        }
+
+        // Close modals on outside click
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeQuickView();
+            }
+            if (event.target == checkoutModal) {
+                closeCheckout();
+            }
+        }
+    </script>
+
+</body>
+</html>

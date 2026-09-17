@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAJ KEY | Elite Mechanical Keyboards</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkbg: '#050508',
+                        cardbg: '#0f0f13',
+                        neoncyan: '#00f2fe',
+                        neonpurple: '#7928ca',
+                        neonpink: '#ff007f'
+                    },
+                    fontFamily: {
+                        orbitron: ['Orbitron', 'sans-serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-panel {
+            background: rgba(15, 15, 19, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 242, 254, 0.2);
+        }
+        .glow-cyan {
+            box-shadow: 0 0 30px rgba(0, 242, 254, 0.3);
+        }
+        .glow-cyan-hover:hover {
+            box-shadow: 0 0 50px rgba(0, 242, 254, 0.6);
+        }
+        @keyframes rgbBorder {
+            0% { border-color: #00f2fe; }
+            33% { border-color: #7928ca; }
+            66% { border-color: #ff007f; }
+            100% { border-color: #00f2fe; }
+        }
+        .animate-rgb-border {
+            animation: rgbBorder 6s infinite linear;
+        }
+    </style>
+</head>
+<body class="bg-darkbg text-gray-100 font-sans selection:bg-neoncyan selection:text-black">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-neonpurple via-neoncyan to-neonpink text-black text-xs font-bold py-2 text-center tracking-widest uppercase">
+        ⚡ Flash Sale: Get 50% OFF on All Custom Mechanical Keyboards Today! Use Code: MAJ50 ⚡
+    </div>
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 glass-panel border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-neoncyan to-neonpurple flex items-center justify-center glow-cyan">
+                    <i class="fa-solid fa-keyboard text-black text-lg"></i>
+                </div>
+                <span class="font-orbitron text-2xl font-black tracking-widest text-white">MAJ <span class="text-transparent bg-clip-text bg-gradient-to-r from-neoncyan to-neonpink">KEY</span></span>
+            </div>
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wider">
+                <a href="index.html" class="text-neoncyan font-bold transition-colors">HOME</a>
+                <a href="keyboards.html" class="hover:text-neoncyan transition-colors">KEYBOARDS</a>
+                <a href="features.html" class="hover:text-neoncyan transition-colors">FEATURES</a>
+                <a href="reviews.html" class="hover:text-neoncyan transition-colors">REVIEWS</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <div class="relative cursor-pointer">
+                    <i class="fa-solid fa-cart-shopping text-xl hover:text-neoncyan transition-colors"></i>
+                    <span class="absolute -top-2 -right-2 bg-neonpink text-white font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center">1</span>
+                </div>
+                <a href="#products" class="hidden sm:inline-block bg-gradient-to-r from-neoncyan to-neonpurple text-black font-bold px-6 py-2.5 rounded-full text-sm tracking-wider glow-cyan glow-cyan-hover transition-all">
+                    SHOP NOW
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section with Fixed Background Video -->
+    <section id="home" class="relative pt-24 pb-32 md:pt-40 md:pb-44 overflow-hidden flex items-center justify-center">
+        <!-- Video Background Container -->
+        <div class="absolute inset-0 z-0 overflow-hidden bg-black">
+            <video id="bgVideo" autoplay muted loop playsinline preload="auto" class="w-full h-full object-cover filter brightness-75 scale-105">
+                <source src="keyboard.mp4" type="video/mp4">
+            </video>
+            <!-- Dark Gradient Overlay যাতে টেক্সট একদম ক্লিয়ার ও জোস দেখায় -->
+            <div class="absolute inset-0 bg-gradient-to-b from-darkbg/80 via-darkbg/60 to-darkbg/90"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            
+            <!-- Center Content -->
+            <div class="space-y-6 flex flex-col items-center">
+                <span class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full glass-panel text-neoncyan text-xs font-semibold tracking-widest uppercase animate-rgb-border border">
+                    <i class="fa-solid fa-bolt text-neoncyan"></i> <span>Next-Gen Typing Experience</span>
+                </span>
+                <h1 class="font-orbitron text-4xl sm:text-6xl font-black tracking-tight text-white leading-tight max-w-3xl drop-shadow-lg">
+                    FEEL EVERY <span class="text-transparent bg-clip-text bg-gradient-to-r from-neoncyan via-neonpurple to-neonpink">STROKE</span>.
+                </h1>
+                <p class="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto drop-shadow">
+                    Welcome to <strong class="text-white">Maj Key</strong>. Engineered with custom lubricating switches, premium PBT keycaps, and hyper-vibrant RGB lighting built for ultimate gamers and professionals.
+                </p>
+                <div class="flex items-center justify-center space-x-4">
+                    <span class="text-3xl font-black text-neoncyan drop-shadow">$129</span>
+                    <span class="text-xl text-gray-400 line-through">$249</span>
+                    <span class="bg-neonpink/30 text-neonpink text-xs px-2.5 py-1 rounded-md font-semibold tracking-wider border border-neonpink/30">SAVE $120</span>
+                </div>
+                <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 pt-4">
+                    <a href="#products" class="w-full sm:w-auto text-center bg-gradient-to-r from-neoncyan to-neonpurple text-black font-bold px-8 py-4 rounded-xl text-base tracking-wider glow-cyan glow-cyan-hover transition-all">
+                        EXPLORE KEYBOARDS
+                    </a>
+                    <!-- Why Maj Key Button with Popup Trigger -->
+                    <button onclick="openModal()" class="w-full sm:w-auto text-center glass-panel text-white font-medium px-8 py-4 rounded-xl text-base hover:border-neoncyan transition-all cursor-pointer">
+                        Why Maj Key?
+                    </button>
+                </div>
+                <!-- Trust Badges -->
+                <div class="grid grid-cols-3 gap-6 pt-8 border-t border-white/10 text-xs text-gray-300 text-center max-w-xl w-full">
+                    <div><i class="fa-solid fa-truck-fast text-neoncyan mb-1 block text-lg"></i> Fast BD Shipping</div>
+                    <div><i class="fa-solid fa-shield-halved text-neoncyan mb-1 block text-lg"></i> 2-Year Warranty</div>
+                    <div><i class="fa-solid fa-headphones text-neoncyan mb-1 block text-lg"></i> 24/7 Expert Support</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Products / Shop Section -->
+    <section id="products" class="py-20 bg-cardbg/50 border-y border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="font-orbitron text-3xl sm:text-4xl font-black text-white mb-4">Featured Keyboards</h2>
+                <p class="text-gray-400">Choose your weapon. Built with precision switches for maximum tactile feedback and speed.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Product 1 -->
+                <div class="glass-panel rounded-2xl overflow-hidden group hover:border-neoncyan transition-all">
+                    <div class="relative h-60 overflow-hidden bg-black/40">
+                        <img src="https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?auto=format&fit=crop&w=600&q=80" alt="Maj Key 65%" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-neoncyan text-black text-xs font-bold px-3 py-1 rounded-full">BEST SELLER</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <h3 class="font-orbitron text-xl font-bold text-white">Maj Key 65% Compact</h3>
+                        <p class="text-gray-400 text-sm">Wireless Tri-Mode, RGB Backlit, Gateron Yellow Switches.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-black text-neoncyan">$129.00</span>
+                            <button onclick="alert('Added to cart successfully!')" class="bg-gradient-to-r from-neoncyan to-neonpurple text-black font-bold px-4 py-2 rounded-xl text-sm glow-cyan glow-cyan-hover transition-all">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="glass-panel rounded-2xl overflow-hidden group hover:border-neoncyan transition-all">
+                    <div class="relative h-60 overflow-hidden bg-black/40">
+                        <img src="https://images.unsplash.com/photo-1595225476474-87563907a212?auto=format&fit=crop&w=600&q=80" alt="Maj Key TKL" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-neonpurple text-white text-xs font-bold px-3 py-1 rounded-full">PRO GAMING</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <h3 class="font-orbitron text-xl font-bold text-white">Maj Key TKL Esports</h3>
+                        <p class="text-gray-400 text-sm">Aluminum Frame, Hot-Swappable PCB, Linear Red Switches.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-black text-neoncyan">$159.00</span>
+                            <button onclick="alert('Added to cart successfully!')" class="bg-gradient-to-r from-neoncyan to-neonpurple text-black font-bold px-4 py-2 rounded-xl text-sm glow-cyan glow-cyan-hover transition-all">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="glass-panel rounded-2xl overflow-hidden group hover:border-neoncyan transition-all">
+                    <div class="relative h-60 overflow-hidden bg-black/40">
+                        <img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=600&q=80" alt="Maj Key Full" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-neonpink text-white text-xs font-bold px-3 py-1 rounded-full">LIMITED EDITION</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <h3 class="font-orbitron text-xl font-bold text-white">Maj Key Full-Size Ultra</h3>
+                        <p class="text-gray-400 text-sm">Dedicated Media Keys, Sound-Absorbing Foam, Tactile Brown.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-black text-neoncyan">$189.00</span>
+                            <button onclick="alert('Added to cart successfully!')" class="bg-gradient-to-r from-neoncyan to-neonpurple text-black font-bold px-4 py-2 rounded-xl text-sm glow-cyan glow-cyan-hover transition-all">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-white/10 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 rounded-lg bg-neoncyan flex items-center justify-center">
+                    <i class="fa-solid fa-keyboard text-black"></i>
+                </div>
+                <span class="font-orbitron text-xl font-bold tracking-widest text-white">MAJ KEY</span>
+            </div>
+            <div class="flex space-x-6 text-sm text-gray-400">
+                <a href="index.html" class="hover:text-neoncyan">Home</a>
+                <a href="keyboards.html" class="hover:text-neoncyan">Keyboards</a>
+                <a href="features.html" class="hover:text-neoncyan">Features</a>
+                <a href="reviews.html" class="hover:text-neoncyan">Reviews</a>
+            </div>
+            <div class="flex space-x-4 text-neoncyan">
+                <a href="#" class="w-10 h-10 rounded-full glass-panel flex items-center justify-center hover:bg-neoncyan hover:text-black transition-all"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full glass-panel flex items-center justify-center hover:bg-neoncyan hover:text-black transition-all"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full glass-panel flex items-center justify-center hover:bg-neoncyan hover:text-black transition-all"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
+        <div class="text-center text-xs text-gray-600 mt-8">
+            &copy; 2026 MAJ KEY Bangladesh. All Rights Reserved.
+        </div>
+    </footer>
+
+    <!-- WHY MAJ KEY POP-UP MODAL -->
+    <div id="whyModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300 px-4">
+        <div class="glass-panel w-full max-w-2xl rounded-3xl p-6 sm:p-8 relative transform scale-95 transition-transform duration-300 border border-neoncyan/40 shadow-2xl glow-cyan">
+            
+            <!-- Close Button -->
+            <button onclick="closeModal()" class="absolute top-5 right-5 w-10 h-10 rounded-full bg-cardbg text-gray-400 hover:text-neoncyan hover:bg-white/10 flex items-center justify-center transition-all">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <!-- Modal Header -->
+            <div class="text-center space-y-2 mb-6">
+                <span class="text-neoncyan text-xs font-bold tracking-widest uppercase bg-neoncyan/10 px-3 py-1 rounded-full border border-neoncyan/30">
+                    <i class="fa-solid fa-crown mr-1"></i> The MAJ KEY Advantage
+                </span>
+                <h3 class="font-orbitron text-2xl sm:text-3xl font-black text-white">Why Choose MAJ KEY?</h3>
+                <p class="text-gray-400 text-sm">Engineered for elite typists, competitive gamers, and keyboard enthusiasts.</p>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                <div class="bg-cardbg/80 p-4 rounded-2xl border border-white/5 space-y-2">
+                    <div class="w-9 h-9 rounded-xl bg-neoncyan/10 text-neoncyan flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-feather"></i>
+                    </div>
+                    <h4 class="font-orbitron font-bold text-white text-base">Pre-Lubed Switches</h4>
+                    <p class="text-gray-400 text-xs leading-relaxed">Factory hand-lubricated switches for buttery-smooth keystrokes with zero scratchiness.</p>
+                </div>
+
+                <div class="bg-cardbg/80 p-4 rounded-2xl border border-white/5 space-y-2">
+                    <div class="w-9 h-9 rounded-xl bg-neonpurple/10 text-neonpurple flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+                    <h4 class="font-orbitron font-bold text-white text-base">Sound Dampening Foam</h4>
+                    <p class="text-gray-400 text-xs leading-relaxed">Multi-layer acoustic foam absorbs ping and hollow sounds, giving a deep 'thock' sound.</p>
+                </div>
+
+                <div class="bg-cardbg/80 p-4 rounded-2xl border border-white/5 space-y-2">
+                    <div class="w-9 h-9 rounded-xl bg-neonpink/10 text-neonpink flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-bolt-lightning"></i>
+                    </div>
+                    <h4 class="font-orbitron font-bold text-white text-base">Tri-Mode Connectivity</h4>
+                    <p class="text-gray-400 text-xs leading-relaxed">Switch seamlessly between Ultra-fast 2.4GHz Wireless, Bluetooth 5.1, and Wired USB-C.</p>
+                </div>
+
+                <div class="bg-cardbg/80 p-4 rounded-2xl border border-white/5 space-y-2">
+                    <div class="w-9 h-9 rounded-xl bg-neoncyan/10 text-neoncyan flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-shield-check"></i>
+                    </div>
+                    <h4 class="font-orbitron font-bold text-white text-base">Hot-Swappable PCB</h4>
+                    <p class="text-gray-400 text-xs leading-relaxed">Easily change 3-pin or 5-pin mechanical switches without any soldering required.</p>
+                </div>
+            </div>
+
+            <!-- Trust Badge Footer inside Modal -->
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-white/10">
+                <div class="flex items-center space-x-2 text-xs text-gray-300">
+                    <i class="fa-solid fa-circle-check text-neoncyan text-base"></i>
+                    <span>Trusted by 5,000+ Happy Gamers & Professionals Across BD</span>
+                </div>
+                <button onclick="closeModal()" class="w-full sm:w-auto bg-gradient-to-r from-neoncyan to-neonpurple text-black font-bold px-6 py-2.5 rounded-xl text-sm glow-cyan transition-all">
+                    Got It, Let's Shop!
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 🌐 LIVE SUPPORT CHAT WIDGET (Bottom Right Corner) -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <!-- Chat Toggle Button -->
+        <button id="chatToggleBtn" onclick="toggleChatBox()" class="w-14 h-14 rounded-full bg-gradient-to-tr from-neoncyan to-neonpurple text-black flex items-center justify-center text-2xl shadow-2xl glow-cyan hover:scale-110 transition-all cursor-pointer">
+            <i class="fa-solid fa-headset"></i>
+        </button>
+
+        <!-- Chat Box Window (Hidden Initially) -->
+        <div id="chatBoxWindow" class="hidden absolute bottom-20 right-0 w-80 sm:w-96 glass-panel rounded-3xl border border-neoncyan/40 shadow-2xl overflow-hidden flex flex-col transition-all duration-300">
+            <!-- Chat Header -->
+            <div class="bg-gradient-to-r from-neonpurple to-neoncyan p-4 flex items-center justify-between text-black font-bold">
+                <div class="flex items-center space-x-2">
+                    <div class="w-3 h-3 rounded-full bg-green-400 animate-pulse"></div>
+                    <span class="font-orbitron text-sm tracking-wider text-black">MAJ KEY Support</span>
+                </div>
+                <button onclick="toggleChatBox()" class="w-8 h-8 rounded-full bg-black/20 hover:bg-black/40 flex items-center justify-center text-black transition-all">
+                    <i class="fa-solid fa-xmark text-sm"></i>
+                </button>
+            </div>
+
+            <!-- Chat Messages Area -->
+            <div id="chatMessages" class="p-4 h-72 overflow-y-auto space-y-3 text-xs flex flex-col bg-black/60">
+                <div class="flex items-start space-x-2">
+                    <div class="w-7 h-7 rounded-full bg-neoncyan text-black flex items-center justify-center font-bold text-xs shrink-0">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <div class="bg-cardbg border border-white/10 p-3 rounded-2xl rounded-tl-none text-gray-200 max-w-[80%] leading-relaxed">
+                        Hi Sir! Welcome to MAJ KEY. How can we help you today with our mechanical keyboards? 😊
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Input Area -->
+            <div class="p-3 border-t border-white/10 bg-cardbg/90 flex items-center space-x-2">
+                <input type="text" id="chatInput" placeholder="Type your message..." onkeypress="handleKeyPress(event)" class="w-full bg-black/60 border border-white/10 rounded-xl px-3 py-2.5 text-xs text-white focus:outline-none focus:border-neoncyan transition-colors">
+                <button onclick="sendUserMessage()" class="w-10 h-10 rounded-xl bg-gradient-to-r from-neoncyan to-neonpurple text-black font-bold flex items-center justify-center shrink-0 hover:scale-105 transition-all">
+                    <i class="fa-solid fa-paper-plane text-xs"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Video, Pop-up, and Live Chat Support -->
+    <script>
+        // Background Video Auto-play handler
+        document.addEventListener("DOMContentLoaded", function() {
+            const video = document.getElementById("bgVideo");
+            if (video) {
+                video.play().catch(error => {
+                    console.log("Auto-play was prevented:", error);
+                });
+            }
+        });
+
+        // Popup Modal Open & Close Functions
+        const modal = document.getElementById('whyModal');
+
+        function openModal() {
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.querySelector('div > div').classList.remove('scale-95');
+            modal.querySelector('div > div').classList.add('scale-100');
+        }
+
+        function closeModal() {
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            modal.querySelector('div > div').classList.remove('scale-100');
+            modal.querySelector('div > div').classList.add('scale-95');
+        }
+
+        // Close modal when clicking outside the box
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        // Live Chat Toggle Function
+        function toggleChatBox() {
+            const chatBox = document.getElementById('chatBoxWindow');
+            chatBox.classList.toggle('hidden');
+        }
+
+        // Send Message and Automatic Reply Logic
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                sendUserMessage();
+            }
+        }
+
+        function sendUserMessage() {
+            const inputField = document.getElementById('chatInput');
+            const messageText = inputField.value.trim();
+            if (messageText === '') return;
+
+            const chatMessages = document.getElementById('chatMessages');
+
+            // Append User Message
+            const userMsgHTML = `
+                <div class="flex items-end justify-end space-x-2">
+                    <div class="bg-gradient-to-r from-neoncyan to-neonpurple text-black p-3 rounded-2xl rounded-tr-none max-w-[80%] font-medium leading-relaxed">
+                        ${escapeHtml(messageText)}
+                    </div>
+                </div>
+            `;
+            chatMessages.insertAdjacentHTML('beforeend', userMsgHTML);
+            inputField.value = '';
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            // Automatic Support Response after 600ms
+            setTimeout(() => {
+                const autoReplyHTML = `
+                    <div class="flex items-start space-x-2">
+                        <div class="w-7 h-7 rounded-full bg-neoncyan text-black flex items-center justify-center font-bold text-xs shrink-0">
+                            <i class="fa-solid fa-robot"></i>
+                        </div>
+                        <div class="bg-cardbg border border-white/10 p-3 rounded-2xl rounded-tl-none text-gray-200 max-w-[80%] leading-relaxed">
+                            Hello! Thanks for contacting Maj Key support. We are currently reviewing your message and will respond shortly. Thanks for your patience!
+                        </div>
+                    </div>
+                `;
+                chatMessages.insertAdjacentHTML('beforeend', autoReplyHTML);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }, 600);
+        }
+
+        // Security helper for input sanitization
+        function unsafeHTML(str) {
+            return str;
+        }
+        function escapeHtml(text) {
+            const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
+            return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+        }
+    </script>
+
+</body>
+</html>
